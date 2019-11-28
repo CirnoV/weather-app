@@ -72,14 +72,20 @@ const weather = createReducer<WeatherState, RootAction>(initialState, {
     const { weather: oldWeather } = state;
     const { payload: newWeather } = action;
     if (newWeather.length <= 0) return state;
-    if (oldWeather[oldWeather.length - 1].집계시각 !== newWeather[newWeather.length - 1].집계시각) {
+    const oldDate = new Date(oldWeather[oldWeather.length - 1].집계시각);
+    const newDate = new Date(newWeather[newWeather.length - 1].집계시각);
+    // 시간대가 바뀌었을 때만 position 초기화
+    if (oldDate.getHours() !== newDate.getHours()) {
       return {
         ...state,
         weather: newWeather,
         position: newWeather.length
       };
     }
-    return state;
+    return {
+      ...state,
+      weather: newWeather,
+    };
   },
   [MOVE]: (state, action) => {
     let position = state.position;
