@@ -53,10 +53,10 @@ export function parseAWSData(data: AWS[], rootData: AWS[][]): WeatherTableData {
     tableData.push(Math.round(aws.기온));
     tableData.push(aws.풍향10.방위명);
     tableData.push(aws.풍속10);
+    // tableData.push('-');
+    // tableData.push('-');
     tableData.push('-');
-    tableData.push('-');
-    tableData.push('-');
-    tableData.push(0);
+    tableData.push(aws.습도 || '-');
 
     result.push([[aws.지역, aws.관측시각, aws.출처], tableData]);
   });

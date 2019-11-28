@@ -14,8 +14,8 @@ const WeatherTable: React.FC<Props> = ({ tableData }) => {
     '現 온도(°C)',
     '現 풍향',
     '現 풍속(m/s)',
-    '누적 강우량',
-    '일일 누적',
+    // '누적 강우량',
+    // '일일 누적',
     '시간 강우량',
     '습도',
   ];
@@ -37,9 +37,11 @@ const WeatherTable: React.FC<Props> = ({ tableData }) => {
         {dataOrder.map((type, idx) => (
           <tr>
             <td>{type}</td>
-            {tableData.map(([, data]) => (
-              <td>{data[idx]}</td>
-            ))}
+            {tableData.map(([, data]) => {
+              return (
+                <td>{data[idx]}</td>
+              );
+            })}
           </tr>
           ))}
       </tbody>
