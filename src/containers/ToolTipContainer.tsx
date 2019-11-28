@@ -26,8 +26,11 @@ const ToolTipContainer: React.FC<ToolTipContainerProps> = ({
     <GlobalHotKeys handlers={handlers}>
       {!hide && <>
         {/* <ToolTip>
-         현재 작업중. 간헐적으로 오류가 뜰 수 있으니 주의
+          현재 작업중. 간헐적으로 오류가 뜰 수 있으니 주의
         </ToolTip> */}
+        <ToolTip>
+          날씨 서버 점검으로 인해 11월 28일 데이터가 초기화 되었습니다.
+        </ToolTip>
         <ToolTip>
           <CodeArea>
             up / down
