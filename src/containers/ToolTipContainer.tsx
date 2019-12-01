@@ -29,9 +29,6 @@ const ToolTipContainer: React.FC<ToolTipContainerProps> = ({
           현재 작업중. 간헐적으로 오류가 뜰 수 있으니 주의
         </ToolTip> */}
         <ToolTip>
-          날씨 서버 점검으로 인해 11월 28일 데이터가 초기화 되었습니다.
-        </ToolTip>
-        <ToolTip>
           <CodeArea>
             up / down
           </CodeArea>
@@ -63,6 +60,9 @@ const ToolTipContainer: React.FC<ToolTipContainerProps> = ({
         </ToolTip>
         <ToolTip>
           {"누적 강우량, 일일 누적 삭제"}
+        </ToolTip>
+        <ToolTip>
+          {"시간 강우량이 추가되었습니다. 잘 작동하는지는 비가 와봐야 알기 때문에 나중에 꼭 말해주기 바람"}
         </ToolTip>
         <ToolTip>
           {"이 글들을 숨기거나 다시 보고싶으면 "}

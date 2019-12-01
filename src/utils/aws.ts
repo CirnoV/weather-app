@@ -55,7 +55,8 @@ export function parseAWSData(data: AWS[], rootData: AWS[][]): WeatherTableData {
     tableData.push(aws.풍속10);
     // tableData.push('-');
     // tableData.push('-');
-    tableData.push('-');
+    let prevRain = rootData.flatMap(e => e.filter(r => r.지역 === aws.지역).map(r => r.일강수)).pop();
+    tableData.push(`${aws.일강수 - (prevRain || 0)}`);
     tableData.push(aws.습도 || '-');
 
     result.push([[aws.지역, aws.관측시각, aws.출처], tableData]);
