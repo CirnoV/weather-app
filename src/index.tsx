@@ -16,8 +16,12 @@ import { refresh, WeatherData } from './modules/weather';
 
 const store = createStore(rootReducer, composeWithDevTools());
 
+const uri = process.env.NODE_ENV === 'production' 
+  ? 'http://weather.icicle.moe:8080'
+  : 'http://localhost:8080';
+
 async function autoRefresh() {
-  const response = await axios.get('http://code.icicle.moe:8080');
+  const response = await axios.get(uri);
   const weatherData: WeatherData[] = response.data;
   store.dispatch(refresh(weatherData));
 }
