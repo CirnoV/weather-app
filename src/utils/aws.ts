@@ -52,7 +52,7 @@ export function parseAWSData(data: AWS[], rootData: AWS[][]): WeatherTableData {
     const temperature: number[] = rootData.flatMap(e => e.filter(r => r.지역 === aws.지역).map(r => r.기온 || 0));
     tableData.push(Math.round(Math.max(...temperature)));
     tableData.push(Math.round(Math.min(...temperature)));
-    tableData.push(aws.기온 ? Math.round(aws.기온) : '-');
+    tableData.push(aws.기온 || aws.기온 === 0 ? Math.round(aws.기온) : '-');
     tableData.push(aws.풍향10 ? aws.풍향10.방위명 : '-');
     tableData.push(aws.풍속10 ? aws.풍속10 : '-');
     // tableData.push('-');
