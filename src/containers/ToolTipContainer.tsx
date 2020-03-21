@@ -25,9 +25,9 @@ const ToolTipContainer: React.FC<ToolTipContainerProps> = ({
   return (
     <GlobalHotKeys handlers={handlers}>
       {!hide && <>
-        {/* <ToolTip>
-          현재 작업중. 간헐적으로 오류가 뜰 수 있으니 주의
-        </ToolTip> */}
+        <ToolTip>
+          간헐적으로 이전 시간대로 돌아가버리는 버그 수정
+        </ToolTip>
         <ToolTip>
           <CodeArea>
             up / down
